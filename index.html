@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            background-color: #56baed;
+        }
+        .xz{
+           height:300px;
+           width:300px;
+           border:2px solid #56baed;
+           border-radius: 10px;
+           text-align: center;
+           font-size: 55px;
+           display:none;
+           color: #56baed;
+           background-color:#56baed;
+           padding: 5px;
+           font-family: 'Poppins', sans-serif;
+       }
+       .col{
+            border:2px solid #56baed;
+            background-color: white;
+            border-radius: 10px;
+            height:100px;
+             
+       }
+   
+       .start{
+           padding: 20px;
+           display: block;
+       }
+       #reset,#restart,.ready{
+           color: #56baed;
+           background-color: white;
+           border: 1px solid white;
+           border-radius: 5px;
+           font-size: 18px;
+       }
+        .ready:hover {
+            background-color:  #56baed;
+            color: white;
+        }
+        #reset:hover {
+            background-color:  #56baed;
+            color: white;
+        }
+        #restart:hover {
+            background-color:  #56baed;
+            color: white;
+        }
+
+       table{
+           margin: 20px;
+           border:1px solid white;
+           height:100px;
+           width:200px;
+           font-size:20px;
+           color: #56baed;
+           background-color: white;
+       }
+       td{
+           border:1px solid  #56baed;
+       }
+      
+    </style>
+</head>
+<body>
+    <div class="start">
+       <h3 style="color:white;">Welcome to Tic-Tac-Toe Game</h3>   
+      <input type="text" id="user1" placeholder="Player 1 (X)"><br><br>
+      <input type="text" id="user2" placeholder="Player 2 (0)"><br><br>
+        <input type="button" value="Start" onclick="start()" class="ready">
+    </div>
+    <div class="container xz" id="xz">
+        <div class="row">
+            <div class="col" id="0" onclick="getVal('0')"></div>
+            <div class="col" id="1" onclick="getVal('1')"></div>
+            <div class="col" id="2" onclick="getVal('2')"></div>
+        </div>
+        <div class="row">
+            <div class="col" id="3" onclick="getVal('3')"></div>
+            <div class="col" id="4" onclick="getVal('4')"></div>
+            <div class="col" id="5" onclick="getVal('5')"></div>
+        </div>
+        <div class="row">
+            <div class="col" id="6" onclick="getVal('6')"></div>
+            <div class="col" id="7" onclick="getVal('7')"></div>
+            <div class="col" id="8" onclick="getVal('8')"></div>
+        </div>
+        <input type="button" value="Reset" id="reset" onclick="reset()">
+        <input type="button" value="Restart" id="restart" onclick="restart()">
+        <table>
+            <tr>
+                <td id="name1"></td>
+                <td id="name2"></td>
+            </tr>
+            <tr>
+                <td id="count1">0</td>
+                <td id="count2">0</td>
+            </tr>
+        </table>
+
+        </div>
+    <script src="tic-tac.js"></script>
+</body>
+</html>
