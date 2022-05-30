@@ -27,43 +27,42 @@ function setVal(index,val){
      return arr1[index];
 }
 function getWin(){
-    if(arr1[0]==arr1[1] && arr1[1]==arr1[2] || arr1[3]==arr1[4] && arr1[4]==arr1[5] || arr1[6]==arr1[7] && arr1[7]==arr1[8] )
-    {
-        if(state==false){
-            alert(user1+ " is winner");
+    const winnerIndex=[
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ]
+    for(let i=0;i<=winnerIndex.length;i++){
+        const[a,b,c]=winnerIndex[i];
+        if(arr1[a]==arr1[b] && arr1[b]==arr1[c]){
+           if(state==false){
+               alert(user1+" is Winner");
+               color="rgba(223, 52, 52,0.5)";
+           }
+           else{
+               alert(user2+" is Winner");
+               color="lightgreen";
+           }
+           highLight(a,b,c,color);
+           score();
+           resetArray();
+           break;
+           
         }
-        else{
-            alert(user2+ " is winner");
-        }
-        resetArray();
-        score();
-    } 
-    else if(arr1[0]==arr1[3] && arr1[3]==arr1[6] || arr1[1]==arr1[4] && arr1[4]==arr1[7] || arr1[2]==arr1[5] && arr1[5]==arr1[8])
-    {
-        if(state==false){
-            alert(user1+ " is winner");
-          
-        }
-        else{
-            alert(user2+ " is winner");
-       
-        }
-        resetArray();
-        score();
-    } 
-    else if(arr1[0]==arr1[4] && arr1[4]==arr1[8] || arr1[2]==arr1[4] && arr1[4]==arr1[6])
-    {
-        if(state==false){
-            alert(user1+ " is winner");
-          
-        }
-        else{
-            alert(user2+ " is winner");
-       
-        }
-        resetArray();
-        score();
-    } 
+
+    }
+
+}
+function highLight(x,y,z,c){
+    document.getElementById(x).style.color=c;
+    document.getElementById(y).style.color=c;
+    document.getElementById(z).style.color=c;
+
 }
 function start(){
     user1=document.querySelector("#user1").value;
@@ -90,6 +89,7 @@ function reset(){
     arr1=[1,0,1,0,1,0,0,1,0];
     for(let i=0;i<=8;i++){
         document.getElementById(i).innerHTML="";
+         document.getElementById(i).style.color="";
     }
 }
 function score(){
