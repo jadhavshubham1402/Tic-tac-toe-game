@@ -41,11 +41,11 @@ function getWin(){
         const[a,b,c]=winnerIndex[i];
         if(arr1[a]==arr1[b] && arr1[b]==arr1[c]){
            if(state==false){
-               alert(user1+" is Winner");
+               document.querySelector("p").innerText=user1+" is winner ";
                color="rgba(223, 52, 52,0.5)";
            }
            else{
-               alert(user2+" is Winner");
+               document.querySelector("p").innerText=user2+" is winner ";
                color="lightgreen";
            }
            highLight(a,b,c,color);
