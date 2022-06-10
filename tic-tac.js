@@ -91,6 +91,7 @@ function reset(){
         document.getElementById(i).innerHTML="";
          document.getElementById(i).style.color="";
     }
+   document.querySelector("p").innerText="";
 }
 function score(){
     var value1=document.querySelector("#count1");
